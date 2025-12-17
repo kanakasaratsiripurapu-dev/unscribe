@@ -24,14 +24,27 @@ async def lifespan(app: FastAPI):
     """Startup and shutdown events"""
     # Startup
     logger.info("Starting SubScout API...")
+    logger.info(f"Environment: {settings.ENVIRONMENT}")
+    
     # Create database tables if they don't exist (gracefully handle connection errors)
     try:
         async with engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
-        logger.info("Database initialized")
+        logger.info("Database initialized successfully")
     except Exception as e:
         logger.warning(f"Database connection failed: {e}")
-        logger.warning("API will start but database operations will fail. Please check PostgreSQL is running.")
+        logger.warning("API will start but database operations will fail. Please check PostgreSQL connection and DATABASE_URL.")
+    
+    # Test Redis connection
+    try:
+        import redis
+        redis_client = redis.from_url(settings.REDIS_URL, decode_responses=True)
+        redis_client.ping()
+        logger.info("Redis connection successful")
+        redis_client.close()
+    except Exception as e:
+        logger.warning(f"Redis connection failed: {e}")
+        logger.warning("API will start but Redis operations will fail. Please check Redis connection and REDIS_URL.")
     
     yield
     
