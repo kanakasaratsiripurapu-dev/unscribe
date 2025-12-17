@@ -13,8 +13,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install Playwright browsers for unsubscribe service
-RUN playwright install chromium
-RUN playwright install-deps chromium
+# Skipping browser installation for Railway deployment (can be installed at runtime if needed)
+# Uncomment the lines below if browsers are required:
+# RUN playwright install chromium
+# RUN playwright install-deps chromium
 
 # Copy application code
 COPY . .
