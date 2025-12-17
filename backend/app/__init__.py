@@ -1,0 +1,2 @@
+"""SubScout backend application"""
+
