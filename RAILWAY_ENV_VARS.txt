@@ -1,0 +1,14 @@
+# Environment Variables for Railway Backend
+# Copy these into Railway → Your Service → Variables
+
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+GOOGLE_REDIRECT_URI=https://your-app.vercel.app/auth/callback
+OPENAI_API_KEY=your-openai-api-key
+JWT_SECRET_KEY=your-jwt-secret-key
+ENCRYPTION_KEY=your-encryption-key
+ENVIRONMENT=production
+
+# Note: DATABASE_URL and REDIS_URL are automatically provided by Railway
+# when you add PostgreSQL and Redis services
+
