@@ -1,6 +1,6 @@
 # Unscribe - AI-Powered Subscription Management Platform
 
-**SubScout** is an intelligent subscription management platform that automatically analyzes your Gmail inbox to discover, track, and cancel unwanted subscriptions. Our AI agents scan your emails, extract subscription details (cost, renewal dates, cancellation links), and present everything in a clean dashboard with real-time spending insights.
+**Unscribe** is an intelligent subscription management platform that automatically analyzes your Gmail inbox to discover, track, and cancel unwanted subscriptions. Our AI agents scan your emails, extract subscription details (cost, renewal dates, cancellation links), and present everything in a clean dashboard with real-time spending insights.
 
 ## 🚀 Quick Start
 
@@ -142,4 +142,4 @@ For issues or questions, please open an issue in the repository.
 
 ---
 
-**Made with ❤️ by the SubScout team**
+**Made with ❤️ by the Unscribe team**
